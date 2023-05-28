@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PacketController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,4 +24,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
         return $request->user();
     });
     Route::post('/logout', [UserController::class, 'logout']);
+});
+
+Route::middleware(['auth:sanctum', 'checkRole:2'])->group(function () {
+    Route::apiResource('/packets', PacketController::class);
 });
