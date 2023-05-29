@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\PacketController;
+use App\Http\Controllers\Api\StudioController;
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::middleware(['auth:sanctum', 'checkRole:2'])->group(function () {
     Route::apiResource('/packets', PacketController::class);
     Route::apiResource('/customers', CustomerController::class);
+    Route::apiResource('/studios', StudioController::class);
 });
