@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\GalleryController;
 use App\Http\Controllers\Api\PacketController;
 use App\Http\Controllers\Api\StudioController;
 use App\Http\Controllers\Api\UserController;
@@ -32,4 +33,5 @@ Route::middleware(['auth:sanctum', 'checkRole:2'])->group(function () {
     Route::apiResource('/packets', PacketController::class);
     Route::apiResource('/customers', CustomerController::class);
     Route::apiResource('/studios', StudioController::class);
+    Route::apiResource('/galleries', GalleryController::class);
 });
