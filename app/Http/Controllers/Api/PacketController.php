@@ -70,6 +70,7 @@ class PacketController extends Controller
             'packet_name' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|numeric',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $packet = Packet::find($id);

@@ -42,6 +42,7 @@ class UserController extends Controller
             'gender' => $request->gender,
             'address' => $request->address,
             'nomor_hp' => $nomor_hp,
+            'image' => 'default.jpg',
         ]);
 
         return response()->json([
