@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\BrandController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\GalleryController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\PacketController;
 use App\Http\Controllers\Api\StudioController;
 use App\Http\Controllers\Api\UserController;
@@ -42,4 +43,17 @@ Route::middleware(['auth:sanctum', 'checkRole:2'])->group(function () {
     Route::get('/contacts', [ContactController::class, 'index']);
     Route::get('/contacts/{contact}', [ContactController::class, 'show']);
     Route::match (['put', 'patch'], '/contacts/{contact}', [ContactController::class, 'update']);
+
+    Route::get('orders/ordered', [OrderController::class, 'getOrderOrdered']);
+
+});
+
+Route::middleware(['auth:sanctum', 'checkRole:3'])->group(function () {
+    Route::get('packets', [PacketController::class, 'index']);
+    Route::get('packets/{packet}', [PacketController::class, 'show']);
+    Route::get('studios', [StudioController::class, 'index']);
+    Route::get('studios/{studio}', [StudioController::class, 'show']);
+
+    Route::post('orders', [OrderController::class, 'store']);
+    Route::get('orders/{order}', [OrderController::class, 'show']);
 });

@@ -16,14 +16,14 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\Contact::create([
-            'account_number' => 'requestaccountnumber',
-            'name_on_account' => 'requestnameonaccount',
-            'bank_name' => 'requestbankname',
-            'method_order' => 'requestmethodorder',
-            'whatsapp' => 'requestwhatsapp',
-            'facebook' => 'requestfacebook',
-            'instagram' => 'requestinstagram',
-        ]);
+        // \App\Models\Contact::create([
+        //     'account_number' => 'requestaccountnumber',
+        //     'name_on_account' => 'requestnameonaccount',
+        //     'bank_name' => 'requestbankname',
+        //     'method_order' => 'requestmethodorder',
+        //     'whatsapp' => 'requestwhatsapp',
+        //     'facebook' => 'requestfacebook',
+        //     'instagram' => 'requestinstagram',
+        // ]);
     }
 }
