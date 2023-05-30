@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,11 +16,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\User::create([
-            'email' => 'admin@studio.id',
-            'username' => 'adminku',
-            'password' => Hash::make('adminku'),
-            'role_id' => 2,
-        ]);
+        // \App\Models\Brand::create([
+        //     'image' => 'default.jpg',
+        //     'brand_name' => "Studio Fotota'",
+        //     'description' => 'Studio Termurah',
+        //     'about' => 'Lorem Ipsum bla dan bla serta bla',
+        //     'address' => 'Sulawesi Selatan',
+        // ]);
     }
 }
