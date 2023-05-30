@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\BrandController;
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\GalleryController;
 use App\Http\Controllers\Api\PacketController;
@@ -38,4 +39,7 @@ Route::middleware(['auth:sanctum', 'checkRole:2'])->group(function () {
     Route::get('/brands', [BrandController::class, 'index']);
     Route::get('/brands/{brand}', [BrandController::class, 'show']);
     Route::match (['put', 'patch'], '/brands/{brand}', [BrandController::class, 'update']);
+    Route::get('/contacts', [ContactController::class, 'index']);
+    Route::get('/contacts/{contact}', [ContactController::class, 'show']);
+    Route::match (['put', 'patch'], '/contacts/{contact}', [ContactController::class, 'update']);
 });
